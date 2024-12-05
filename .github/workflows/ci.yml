@@ -11,6 +11,14 @@ jobs:
         name: Continuous Integration
         steps:
             - uses: actions/checkout@v4
+            # Set up Rust with nightly
+            - name: Install Rust nightly
+              uses: actions-rs/toolchain@v1
+              with:
+                toolchain: nightly
+                profile: minimal # Optionally use "default" or "complete" for additional components
+                override: true  # Makes nightly the default version for this workflow
+
             - name: Set up cargo cache
               uses: actions/cache@v4
               continue-on-error: false
