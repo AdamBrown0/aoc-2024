@@ -17,7 +17,8 @@ pub fn part_one(input: &str) -> Option<u32> {
 
 pub fn part_two(input: &str) -> Option<u32> {
     let re = Regex::new(r"(?s)(?:^|do\(\))(.*?)(?:don't\(\)|$)").unwrap();
-    let ret: u32 = re.captures_iter(input)
+    let ret: u32 = re
+        .captures_iter(input)
         .par_bridge()
         .map(|cap| part_one(cap.get(1).unwrap().as_str()).unwrap())
         .sum();
