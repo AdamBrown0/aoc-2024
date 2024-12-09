@@ -2,6 +2,12 @@
 
 advent_of_code::solution!(2);
 
+type Parsed<'a> = &'a str;
+
+pub fn parse(input: &str) -> Parsed {
+    input
+}
+
 fn validate_list(lvl: &[u16]) -> bool {
     let inc: bool = (lvl[1] as i16 - lvl[0] as i16) > 0;
     !lvl.iter()
@@ -11,7 +17,7 @@ fn validate_list(lvl: &[u16]) -> bool {
         })
 }
 
-pub fn part_one(input: &str) -> Option<u16> {
+pub fn part_one(input: Parsed) -> Option<u16> {
     let mut safe: u16 = 0;
     for line in input.lines() {
         let lvl: Vec<u16> = line
@@ -60,7 +66,7 @@ pub fn part_two(input: &str) -> Option<u16> {
 }
 */
 
-pub fn part_two(input: &str) -> Option<u16> {
+pub fn part_two(input: Parsed) -> Option<u16> {
     let mut safe: u16 = 0;
     for line in input.lines() {
         let lvl: Vec<u16> = line

@@ -3,7 +3,13 @@ use regex::Regex;
 
 advent_of_code::solution!(3);
 
-pub fn part_one(input: &str) -> Option<u32> {
+type Parsed<'a> = &'a str;
+
+pub fn parse(input: &str) -> Parsed {
+    input
+}
+
+pub fn part_one(input: Parsed) -> Option<u32> {
     let re = Regex::new(r"mul\((\d+),(\d+)\)").unwrap();
     let mut sum = 0;
     for cap in re.captures_iter(input) {
@@ -15,7 +21,7 @@ pub fn part_one(input: &str) -> Option<u32> {
     Some(sum)
 }
 
-pub fn part_two(input: &str) -> Option<u32> {
+pub fn part_two(input: Parsed) -> Option<u32> {
     let re = Regex::new(r"(?s)(?:^|do\(\))(.*?)(?:don't\(\)|$)").unwrap();
     let ret: u32 = re
         .captures_iter(input)

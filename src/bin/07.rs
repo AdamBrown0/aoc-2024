@@ -1,16 +1,22 @@
 advent_of_code::solution!(7);
 
+type Parsed<'a> = &'a str;
+
+pub fn parse(input: &str) -> Parsed {
+    input
+}
+
 /// pretty much just brute force it?
 /// split, do i + i+1
 
-pub fn part_one(input: &str) -> Option<u32> {
+pub fn part_one(input: Parsed) -> Option<u32> {
     for line in input.lines() {
         let parts: Vec<&str> = input.split(':').collect();
     }
     None
 }
 
-pub fn part_two(_input: &str) -> Option<u32> {
+pub fn part_two(_input: Parsed) -> Option<u32> {
     None
 }
 

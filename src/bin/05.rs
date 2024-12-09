@@ -1,13 +1,15 @@
-use std::io::Lines;
-
 advent_of_code::solution!(5);
 
-pub fn part_one(input: &str) -> Option<u32> {
-    let orderings = input.lines().take(1176);
-    let page_numbers = input.lines().skip(1177);
-    for line in page_numbers {
-        // let _ = line.split(',').skip(1).map(); // each value runs through orderings n
-    }
+pub fn parse(input: &str) -> &str {
+    input
+}
+
+pub fn part_one(_input: &str) -> Option<u32> {
+    // let orderings = input.lines().take(1176);
+    // let page_numbers = input.lines().skip(1177);
+    // for line in page_numbers {
+    //     // let _ = line.split(',').skip(1).map(); // each value runs through orderings n
+    // }
     None
 }
 

@@ -9,11 +9,17 @@ use std::{cmp, env, process};
 use crate::template::ANSI_BOLD;
 use crate::template::{aoc_cli, Day, ANSI_ITALIC, ANSI_RESET};
 
-pub fn run_part<I: Clone, T: Display>(func: impl Fn(I) -> Option<T>, input: I, day: Day, part: u8) {
+pub fn run_part<I: Clone, T: Display>(
+    func: impl Fn(I) -> Option<T>,
+    input: &I,
+    day: Day,
+    part: u8,
+) {
     let part_str = format!("Part {part}");
 
-    let (result, duration, samples) =
-        run_timed(func, input, |result| print_result(result, &part_str, ""));
+    let (result, duration, samples) = run_timed(func, input.clone(), |result| {
+        print_result(result, &part_str, "")
+    });
 
     print_result(&result, &part_str, &format_duration(&duration, samples));
 

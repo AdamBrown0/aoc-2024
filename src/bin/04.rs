@@ -1,10 +1,16 @@
 advent_of_code::solution!(4);
 
-pub fn part_one(input: &str) -> Option<u32> {
+type Parsed<'a> = &'a str;
+
+pub fn parse(input: &str) -> Parsed {
+    input
+}
+
+pub fn part_one(_input: Parsed) -> Option<u32> {
     None
 }
 
-pub fn part_two(input: &str) -> Option<u32> {
+pub fn part_two(_input: Parsed) -> Option<u32> {
     None
 }
 

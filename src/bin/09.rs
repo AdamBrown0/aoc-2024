@@ -1,9 +1,9 @@
-advent_of_code::solution!(%DAY_NUMBER%);
+advent_of_code::solution!(9);
 
 type Parsed<'a> = &'a str;
 
 pub fn parse(input: &str) -> Parsed {
-  input
+    input
 }
 
 pub fn part_one(input: Parsed) -> Option<u32> {
