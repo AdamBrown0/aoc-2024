@@ -1,8 +1,9 @@
-use std::collections::HashSet;
+use std::collections::BTreeSet;
+use std::hash::Hash;
 
 advent_of_code::solution!(6);
 
-#[derive(Clone, Copy, Hash, Eq, PartialEq)]
+#[derive(Clone, Copy, Hash, Eq, PartialEq, Ord, PartialOrd)]
 enum Direction {
     Up,
     Right,
@@ -50,8 +51,8 @@ impl Guard {
         }
     }
 
-    fn patrol(&mut self, grid: &Vec<Vec<char>>, visited: &mut HashSet<(isize, isize)>) -> bool {
-        let mut seen_positions = HashSet::new();
+    fn patrol(&mut self, grid: &Vec<Vec<char>>, visited: &mut BTreeSet<(isize, isize)>) -> bool {
+        let mut seen_positions = BTreeSet::new();
         visited.insert((self.x, self.y));
         while self.x < grid[0].len() as isize && self.y < grid.len() as isize {
             if self.is_obstacle(grid) {
@@ -99,7 +100,7 @@ pub fn part_one(input: &str) -> Option<u32> {
         y += 1;
         grid.push(inner);
     }
-    let mut visited = HashSet::new();
+    let mut visited = BTreeSet::new();
     guard.patrol(&grid, &mut visited);
     Some(visited.len() as u32)
 }
@@ -108,7 +109,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     let mut successful: u32 = 0;
     let mut grid: Vec<Vec<char>> = vec![];
     let mut guard: Guard = Guard::new(0, 0, Direction::Up);
-    let visited = HashSet::new();
+    let visited = BTreeSet::new();
     let mut gx: isize = 0;
     let mut gy: isize = 0;
     let mut found: bool = false;

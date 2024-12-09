@@ -1,12 +1,11 @@
-use std::io::Lines;
+advent_of_code::solution!(7);
 
-advent_of_code::solution!(5);
+/// pretty much just brute force it?
+/// split, do i + i+1
 
 pub fn part_one(input: &str) -> Option<u32> {
-    let orderings = input.lines().take(1176);
-    let page_numbers = input.lines().skip(1177);
-    for line in page_numbers {
-        // let _ = line.split(',').skip(1).map(); // each value runs through orderings n
+    for line in input.lines() {
+        let parts: Vec<&str> = input.split(':').collect();
     }
     None
 }
@@ -22,7 +21,7 @@ mod tests {
     #[test]
     fn test_part_one() {
         let result = part_one(&advent_of_code::template::read_file("examples", DAY));
-        assert_eq!(result, Some(143));
+        assert_eq!(result, Some(3749));
     }
 
     #[test]
