@@ -114,7 +114,6 @@ impl Guard {
         }
         false
     }
-
 }
 
 pub fn part_one(mut input: Parsed) -> Option<u32> {

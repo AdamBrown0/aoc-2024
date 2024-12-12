@@ -279,6 +279,7 @@ mod tests {
             let timings = Timings {
                 data: vec![Timing {
                     day: day!(1),
+
                     part_1: Some("1ms".into()),
                     part_2: Some("2ms".into()),
                     total_nanos: 3_000_000_000_f64,
@@ -293,6 +294,7 @@ mod tests {
             let timings = Timings {
                 data: vec![Timing {
                     day: day!(1),
+                    input_parse: Some("0ms".into()),
                     part_1: Some("1ms".into()),
                     part_2: None,
                     total_nanos: 1_000_000_000_f64,
