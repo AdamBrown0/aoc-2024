@@ -31,11 +31,11 @@ pub fn parse(input: &str) -> Parsed {
 }
 
 pub fn part_one(input: Parsed) -> Option<u32> {
-    let dc = input.matches('.').count();
-    let split_pos = input.char_indices().nth_back(dc).unwrap().0;
+    // let dc = input.matches('.').count();
+    // let split_pos = input.char_indices().nth_back(dc).unwrap().0;
 
-    let mut end = "";
-    while (end = &input[split_pos..]) != ".".repeat(dc) {}
+    // let mut end = "";
+    // while (end = &input[split_pos..]) != ".".repeat(dc) {}
 
     None
 }
