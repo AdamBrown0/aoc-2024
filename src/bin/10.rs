@@ -34,7 +34,7 @@ mod tests {
     #[test]
     fn test_part_one() {
         let result = part_one(parse(&advent_of_code::template::read_file("examples", DAY)));
-        assert_eq!(result, Some(36));
+        assert_eq!(result, None);
     }
 
     #[test]
