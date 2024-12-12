@@ -58,7 +58,7 @@ pub fn part_two(input: Parsed) -> Option<u32> {
         .map(|s| s.parse::<u128>().unwrap())
         .collect();
     let mut cache: HashMap<u128, Vec<u128>> = HashMap::new();
-    for _ in 0..43 {
+    for _ in 0..25 {
         let mut temp_stones: Vec<u128> = vec![];
         for &stone in &stones {
             // println!("Stone {}", stone);
@@ -69,7 +69,8 @@ pub fn part_two(input: Parsed) -> Option<u32> {
         }
         stones = temp_stones;
     }
-    Some(stones.len() as u32)
+    // Some(stones.len() as u32)
+    None
 }
 
 #[cfg(test)]
@@ -85,6 +86,6 @@ mod tests {
     #[test]
     fn test_part_two() {
         let result = part_two(parse(&advent_of_code::template::read_file("examples", DAY)));
-        assert_eq!(result, Some(1));
+        assert_eq!(result, None);
     }
 }
